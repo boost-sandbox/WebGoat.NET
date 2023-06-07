@@ -2,9 +2,9 @@ name: .NET
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ master ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ master ]
 
 jobs:
   build:
@@ -17,9 +17,9 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: 6.0.x
-    - name: Install .NET Framework 3.5 Developer Pack
+    - name: Install .NET Framework 3.5
       run: |
-        choco install dotnetfx --version 3.5
+        Add-WindowsCapability -Online -Name NetFx3~~~~
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
